@@ -1,0 +1,7 @@
+<definition name="user.simple.form" extends="user.layout">
+		<put-attribute name="content" value="/jsp/user/common/simple-form.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="create.new.brand" extends="user.layout">
+		<put-attribute name="content" value="/jsp/user/common/create-new-brand.jsp"></put-attribute>
+	</definition>
