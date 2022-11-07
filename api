@@ -1,0 +1,120 @@
+ 	
+ 	@RequestMapping("/simple-form")
+	public String simple_form(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{
+		try
+		{	
+			
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		return "user.simple.form";
+	}
+ 	
+ 	
+ 	@RequestMapping("/create-new-brand")
+	public String simple_brand(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{
+		try
+		{	
+			
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		return "create.new.brand";
+	}
+ 	
+ 	@RequestMapping(value="/createNewForm")
+	public void createNewForm(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{
+		PrintWriter writer = response.getWriter();
+		response.setContentType("text/html");
+		CommonResponse commonResponse = null;
+		Gson gson = null;	
+		try 
+   		{
+			commonResponse = new CommonResponse();
+    		gson = new Gson();	
+    		
+    		String brandCin= request.getParameter("brand_cin");
+    		System.out.println("Brand CIN  = " + brandCin);
+    		
+    		String brandGst= request.getParameter("brand_gst");
+    		System.out.println("Brand Gst = " + brandGst);
+    		
+    		String brandPan= request.getParameter("brand_pan");
+    		System.out.println("Brand Pan = " + brandPan);
+    		
+    		String brandName= request.getParameter("brand_name");
+    		System.out.println("Brand Name  = " + brandName);
+    		
+    		String brandDescription= request.getParameter("brand_description");
+    		System.out.println("Brand Description  = " + brandDescription);
+    		
+    		String brandNatureBusiness= request.getParameter("brand_nature_business");
+    		System.out.println("Brand Nature Business  = " + brandNatureBusiness);
+    		
+    		String brandProductService= request.getParameter("brand_product_service");
+    		System.out.println("Brand Product Service  = " + brandProductService);
+    		
+    		String brandTotalEmployees= request.getParameter("brand_total_employees");
+    		System.out.println("Brand Total Employees  = " + brandTotalEmployees);
+    		
+    		String brandAnnualrevenue= request.getParameter("brand_annual_revenue");
+    		System.out.println("Brand Annual Revenue  = " + brandAnnualrevenue);
+    		
+    		String brandAddress= request.getParameter("brand_address");
+    		System.out.println("Brand Address  = " + brandAddress);
+    		
+    		String brandPincode= request.getParameter("brand_pincode");
+    		System.out.println("Brand Pincode  = " + brandPincode);
+    		
+    		String brandCity= request.getParameter("brand_city");
+    		System.out.println("Brand City  = " + brandCity);
+    		
+    		String brandState= request.getParameter("brand_state");
+    		System.out.println("Brand State  = " + brandState);
+    		
+    		String brandCountry= request.getParameter("brand_country");
+    		System.out.println("Brand Country  = " + brandCountry);
+    		
+    		String branDirectorName= request.getParameter("brand_director_name");
+    		System.out.println("Brand Director Name  = " + branDirectorName);
+    		
+    		String brandDirectorDesignation= request.getParameter("brand_director_designation");
+    		System.out.println("Brand Director Designation  = " + brandDirectorDesignation);
+    		
+    		String brandDirectorMobile= request.getParameter("brand_director_mobile");
+    		System.out.println("Brand Director Mobile  = " + brandDirectorMobile);
+    		
+    		String BrandDirectorEmail= request.getParameter("brand_director_email");
+    		System.out.println("Brand Director Email  = " + BrandDirectorEmail);
+    		
+    		String brandDirectorNotes= request.getParameter("brand_director_notes");
+    		System.out.println("Brand Director Notes  = " + brandDirectorNotes);
+    		
+    		String brandAdminName= request.getParameter("brand_admin_name");
+    		System.out.println("Brand Admin Name = " + brandAdminName);
+    		
+    		String brandAdminEmail= request.getParameter("brand_admin_email");
+    		System.out.println("Brand Admin Email  = " + brandAdminEmail);
+    		
+    		String brandAdminMobile= request.getParameter("brand_admin_mobile");
+    		System.out.println("Brand Admin Mobile  = " + brandAdminMobile);
+   		}
+		catch(Exception ex)
+       	{
+       		ex.printStackTrace();
+       		
+       		commonResponse.setStatus("FAILURE");
+			commonResponse.setStatus_code(400);
+			writer.print(gson.toJson(commonResponse));
+			writer.close();
+			return;
+       	}
+	}
+ 	
